@@ -1,0 +1,18 @@
+package home
+
+import "gotthstarter/views/layouts"
+
+templ Index() {
+	@layouts.Base() {
+		<div class="flex flex-col items-center pt-8 bg-red-400">
+			<div class="text-xl border border-orange-400 text-blue-500 font-bold bg-red-500">Ecommerce Site</div>
+			<div class="h-10 w-full font-bold bg-blue-500 flex flex-col">
+				<p class="mx-auto">50% off all items</p>
+			</div>
+			<div>
+				<div><h1>Hello</h1></div>
+				<img src="public/assets/images/camera1.jpeg" alt="" class="w-full max-w-[300px]"/>
+			</div>
+		</div>
+	}
+}
