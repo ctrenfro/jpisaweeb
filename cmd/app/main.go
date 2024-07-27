@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"gotthstarter/handlers"
+	"ecommercesite/handlers"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/joho/godotenv"
@@ -23,6 +23,7 @@ func main() {
 	router.Handle("/public/*", http.StripPrefix("/public/", fileServer))
 
 	router.Get("/", handlers.Make(handlers.HandleHome))
+	router.Get("/itemPage/:itemID", handlers.Make(handlers.HandleItemPage))
 
 	listenAddr := os.Getenv("LISTEN_ADDR")
 	slog.Info("HTTP server started", "listenAddr", listenAddr)

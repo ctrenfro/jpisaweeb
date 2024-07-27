@@ -1,4 +1,4 @@
 .env
 bin
 .vscode
-tailwindcss
+vendor

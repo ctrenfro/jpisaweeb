@@ -1,17 +1,29 @@
 package home
 
-import "gotthstarter/views/layouts"
+import (
+	"ecommercesite/items"
+	"ecommercesite/views/layouts"
+)
 
-templ Index() {
+templ Index(items []items.Items) {
 	@layouts.Base() {
-		<div class="flex flex-col items-center pt-8 bg-red-400">
-			<div class="text-xl border border-orange-400 text-blue-500 font-bold bg-red-500">Ecommerce Site</div>
-			<div class="h-10 w-full font-bold bg-blue-500 flex flex-col">
-				<p class="mx-auto">50% off all items</p>
+		<div class="flex flex-col items-center pt-8" id="homePage">
+			<div class="text-xl border  text-blue-500 font-bold ">Ecommerce Site</div>
+			<div class="w-full font-bold  flex flex-col bg-blue-400 h-[200px] mt-8">
+				<p class="mx-auto pt-10 text-3xl ">50% off all items</p>
 			</div>
-			<div>
-				<div><h1>Hello</h1></div>
-				<img src="public/assets/images/camera1.jpeg" alt="" class="w-full max-w-[300px]"/>
+			<div class="flex flex-row m-4 p-2  border-4 border-black rounded-xl w-full justify-center">
+				for _, item := range items {
+					<div class="flex flex-col px-4">
+						<a
+							href="/itemPage/:{item.ID}"
+						>
+						<li>{item.ID}</li>
+							<li class="">{ item.Name }</li>
+							<img src={ item.Img } alt="" class="w-[250px] rounded"/>
+						</a>
+					</div>
+				}
 			</div>
 		</div>
 	}
