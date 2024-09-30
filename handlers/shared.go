@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"ecommercesite/views"
 	"log/slog"
 	"net/http"
 
@@ -18,5 +19,6 @@ func Make(h HTTPHandler) http.HandlerFunc {
 }
 
 func Render(w http.ResponseWriter, r *http.Request, c templ.Component) error {
-	return c.Render(r.Context(), w)
+
+	return views.Base(c).Render(r.Context(), w)
 }

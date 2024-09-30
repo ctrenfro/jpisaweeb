@@ -1,13 +1,16 @@
 package handlers
 
 import (
-	"ecommercesite/views/itemPage"
-
+	"ecommercesite/items"
+	"ecommercesite/views"
 	"net/http"
 )
 
 func HandleItemPage(w http.ResponseWriter, r *http.Request) error {
+	itemIdString := r.PathValue("itemID")
 
-	return Render(w, r, itemPage.ItemPage())
+	item := items.ReturnItem(itemIdString)
+
+	return Render(w, r, views.ItemPage(item))
 
 }

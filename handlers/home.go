@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"ecommercesite/views/home"
+	"ecommercesite/views"
 
 	"ecommercesite/items"
 	"net/http"
@@ -10,6 +10,6 @@ import (
 func HandleHome(w http.ResponseWriter, r *http.Request) error {
 
 	itemList := items.ReturnItems()
-	return Render(w, r, home.Index(itemList))
+	return Render(w, r, views.Index(itemList))
 
 }
