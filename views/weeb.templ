@@ -1,0 +1,42 @@
+package views
+
+templ Weeb(id int) {
+
+
+    switch id{
+        case 1:
+            <div onload="notWeebAud.play()" hx-on:click="notWeebAud.play()" class=" my-[30rem] flex flex-row m-4 p-2  w-full justify-center text-[5rem]">JP is not a weeb.</div>
+            <audio id="notWeebAud" autoplay once>
+			<source src="/public/assets/sounds/notWeeb.mp3" type="audio/mpeg"/>
+			This HTML5 player is not supported by your browser
+		</audio>
+        case 2:
+            <div class="flex flex-row m-4 p-2  my-[30rem] w-full justify-center text-[5rem]">JP is a little bit of a weeb.</div>
+            <audio id="littleWeebAud" once autoplay>
+			<source src="/public/assets/sounds/littleWeeb.mp3" type="audio/mpeg"/>
+			This HTML5 player is not supported by your browser
+		</audio>
+        case 3:
+            <div class="flex flex-row m-4 p-2 my-[30rem] w-full justify-center text-[5rem]">JP is a weeb.</div>
+             <audio id="weebAud" once autoplay>
+			<source src="/public/assets/sounds/weeb.mp3" type="audio/mpeg"/>
+			This HTML5 player is not supported by your browser
+		</audio>
+        case 4:
+            <div class="flex flex-row m-4 p-2 my-[30rem] w-full justify-center text-[5rem]">JP is a massive weeb.</div>
+            <audio id="massWeebAud" once autoplay>
+			<source src="/public/assets/sounds/massWeeb.mp3" type="audio/mpeg"/>
+			This HTML5 player is not supported by your browser
+		</audio>
+        default:
+            <div class="flex flex-row m-4 p-2 my-[30rem] w-full justify-center text-[5rem]">JP is a massive fucking weeb.</div>
+            <audio id="massFFWeebAud" once autoplay>
+			<source src="/public/assets/sounds/massFFWeeb.mp3" type="audio/mpeg"/>
+			This HTML5 player is not supported by your browser
+		</audio>
+
+    }
+    
+
+    
+}

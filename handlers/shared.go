@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"ecommercesite/views"
+	"jpisaweeb/views"
 	"log/slog"
 	"net/http"
 
